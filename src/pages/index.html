@@ -9,46 +9,78 @@
   </head>
   <body>
     <header class="header">
-      <ul>
-        <li>
-          <a href="#"
+      <ul class="header__ul">
+        <li class="header__ul__li">
+          <a href="#" class="header__ul__li__a"
             ><img
-              class="header__logo"
+              class="header__ul__li__a__logo"
               src="../assets/logo.svg"
               alt="logo-materialize"
           /></a>
         </li>
-        <li class="header__version">
-          <a href="#"><p>1.0.0</p></a>
-          <ul class="header__version__dropdown">
-            <li><p>1.0.0</p></li>
-            <li>0.100.2</li>
+        <li class="header__ul__version">
+          <div class="header__ul__version__seen">1.0.0</div>
+          <ul class="header__ul__version__dropdown">
+            <li><a href="#">1.0.0</a></li>
+            <li><a href="#">0.100.2</a></li>
           </ul>
         </li>
         <li>
-          <div class="header__search">
+          <div class="header__ul__search">
             <input type="text" placeholder="Search" />
-            <a href="#"
+            <a href="#" class="header__ul__search__a"
               ><img
-                class="header__search__logo"
+                class="header__ul__search__a__logo"
                 src="../assets/logo-search.jpg"
                 alt="logo-search"
             /></a>
           </div>
         </li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Getting Started</a></li>
-        <li>
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <div class="header__ul__menu">
+          <li class="header__ul__menu__about">
+            <a href="#" class="header__ul__menu__about__a"><p>About</p></a>
+          </li>
+          <li class="header__ul__menu__getting">
+            <a href="#" class="header__ul__menu__getting__a"
+              ><p>Getting Started</p></a
+            >
+          </li>
+          <li class="header__ul__menu__css">
+            <a href="#"><p>CSS</p></a>
+            <ul class="header__ul__menu__css__unseen">
+              <li>
+                <a href=""><p>Color</p></a>
+              </li>
+              <li>
+                <a href=""><p>Grid</p></a>
+              </li>
+              <li>
+                <a href=""><p>Helpers</p></a>
+              </li>
+              <li>
+                <a href=""><p>Media</p></a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#"><p>Components</p></a>
+          </li>
+          <li>
+            <a href="#"><p>JavaScript</p></a>
+          </li>
+          <li>
+            <a href="#"><p>Forms</p></a>
+          </li>
+          <li>
+            <a href="#"><p>Mobile</p></a>
+          </li>
+          <li>
+            <a href="#"><p>Showcase</p></a>
+          </li>
+          <li>
+            <a href="#"><p>Themes</p></a>
+          </li>
+        </div>
       </ul>
     </header>
     <main class="main">

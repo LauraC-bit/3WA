@@ -1,6 +1,8 @@
 .main {
   h1 {
     color: var(--primary-color);
+    font-weight: 300;
+    font-size: calc(5.2rem + 0.6vmin);
   }
   display: flex;
   flex-direction: column;

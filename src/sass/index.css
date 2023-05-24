@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap");
 *, ::after, ::before {
   box-sizing: inherit;
   padding: 0;
@@ -284,15 +285,20 @@ p {
 
 :root {
   --primary-color: #ee6e73;
+  --secondary-color: rgba(0, 0, 0, 0.87);
   --primary-font: "Roboto", sans-serif;
+  --secondary-font: "Inconsolata", monospace;
+  --text-decoration: none;
+  --primary-size: 13px;
+  --primary-transition: all 0.5s ease;
 }
 
 .header {
   position: relative;
 }
-.header ul:first-child {
+.header__ul {
   width: 300px;
-  height: 1000px;
+  height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
@@ -301,29 +307,66 @@ p {
   flex-direction: column;
   border-right: 1px solid rgba(0, 0, 0, 0.14);
 }
-.header ul:first-child li a:first-child {
+.header__ul__li__a {
   display: flex;
   justify-content: center;
 }
-.header ul:first-child li a:first-child img:first-child {
+.header__ul__li__a__logo {
   width: 200px;
   height: 60px;
   z-index: 3;
+  margin: 24px;
 }
-.header ul:first-child div {
+.header__ul__version {
+  padding-bottom: 13px;
+  display: flex;
+  justify-content: center;
+}
+.header__ul__version__dropdown {
+  display: none;
+}
+.header__ul__version__seen {
+  position: relative;
+  font-family: var(--secondary-font);
+  color: var(--secondary-color);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  width: 56px;
+  line-height: 44px;
+}
+.header__ul__version__seen::after {
+  background-image: url(../assets/arrow.svg);
+  content: "";
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 10px;
+  left: 38px;
+  width: 20px;
+  height: 20px;
+}
+.header__ul__version:hover ul {
+  display: flex;
+  flex-direction: column;
+  transition: var(--primary-transition);
+  overflow: visible;
+}
+.header__ul__version:hover div {
+  display: none;
+  transition: var(--primary-transition);
+}
+.header__ul__search {
   display: flex;
   border-top: 1px solid rgba(0, 0, 0, 0.14);
   border-bottom: 1px solid rgba(0, 0, 0, 0.14);
   position: relative;
 }
-.header ul:first-child div input {
+.header__ul__search input {
   width: 100%;
   height: 62px;
   padding: 0 45px 0 30px;
   border: 0;
   z-index: 3;
 }
-.header ul:first-child div a img:last-of-type {
+.header__ul__search__a__logo {
   width: 20px;
   height: 20px;
   position: absolute;
@@ -331,11 +374,36 @@ p {
   top: 20px;
   right: 11px;
 }
+.header__ul__menu__css__unseen {
+  display: none;
+}
+.header__ul__menu__css:hover ul {
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  padding: 8px;
+  transition: var(--primary-transition);
+}
+.header__ul__menu li {
+  font-size: 13px;
+  line-height: 44px;
+}
+.header__ul__menu li:hover {
+  background-color: lightgray;
+  transition: var(--primary-transition);
+}
 .header p {
   font-family: var(--primary-font);
+  color: var(--secondary-color);
+  font-size: var(--primary-size);
+  font-weight: 500;
+  padding: 0 30px;
 }
-.header__version__dropdown {
-  display: none;
+.header a {
+  -webkit-text-decoration: var(--text-decoration);
+          text-decoration: var(--text-decoration);
+  color: var(--secondary-color);
+  font-size: var(--primary-size);
 }
 
 .main {
@@ -346,4 +414,6 @@ p {
 }
 .main h1 {
   color: var(--primary-color);
+  font-weight: 300;
+  font-size: calc(5.2rem + 0.6vmin);
 }/*# sourceMappingURL=index.css.map */
