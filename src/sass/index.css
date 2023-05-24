@@ -285,16 +285,62 @@ p {
 
 :root {
   --primary-color: #ee6e73;
-  --secondary-color: rgba(0, 0, 0, 0.87);
+  --secondary-color: rgba(0, 0, 0, 0.5);
+  --third-color: rgba(0, 0, 0, 0.826);
   --primary-font: "Roboto", sans-serif;
   --secondary-font: "Inconsolata", monospace;
   --text-decoration: none;
   --primary-size: 13px;
   --primary-transition: all 0.5s ease;
+  --secondary-transition: 0.3s ease-out;
 }
 
 .header {
   position: relative;
+  display: flex;
+}
+.header__burger {
+  width: 25px;
+  height: 25px;
+}
+.header__burger button {
+  padding: 9px 0;
+  cursor: pointer;
+  border: none;
+  width: 32px;
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  background: transparent;
+  top: 45px;
+  left: 109px;
+  transform: translateY(-50%);
+}
+.header__burger button span {
+  height: 2px;
+  width: 100%;
+  background: var(--primary-color);
+}
+.header__burger button span:before {
+  content: "";
+  height: 2px;
+  width: 100%;
+  display: flex;
+  background-color: var(--primary-color);
+  transform: translateY(-9px);
+}
+.header__burger button span:after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  display: flex;
+  background-color: var(--primary-color);
+  transform: translateY(7px);
+}
+@media only screen and (max-width: 1070px) {
+  .header__burger button {
+    display: flex;
+  }
 }
 .header__ul {
   width: 300px;
@@ -319,19 +365,22 @@ p {
 }
 .header__ul__version {
   padding-bottom: 13px;
-  display: flex;
-  justify-content: center;
+  align-self: center;
+  width: 75px;
 }
 .header__ul__version__dropdown {
   display: none;
 }
 .header__ul__version__seen {
   position: relative;
-  font-family: var(--secondary-font);
-  color: var(--secondary-color);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   width: 56px;
   line-height: 44px;
+}
+.header__ul__version__seen span {
+  font-family: var(--secondary-font);
+  color: var(--third-color);
+  padding: 0px;
 }
 .header__ul__version__seen::after {
   background-image: url(../assets/arrow.svg);
@@ -339,7 +388,7 @@ p {
   background-repeat: no-repeat;
   position: absolute;
   top: 10px;
-  left: 38px;
+  left: 44px;
   width: 20px;
   height: 20px;
 }
@@ -388,13 +437,19 @@ p {
   font-size: 13px;
   line-height: 44px;
 }
-.header__ul__menu li:hover {
+.header__ul__menu > li:hover {
   background-color: lightgray;
   transition: var(--primary-transition);
 }
+@media only screen and (max-width: 1070px) {
+  .header__ul {
+    display: none;
+    transition: var(--secondary-transition);
+  }
+}
 .header p {
   font-family: var(--primary-font);
-  color: var(--secondary-color);
+  color: var(--third-color);
   font-size: var(--primary-size);
   font-weight: 500;
   padding: 0 30px;
@@ -408,12 +463,75 @@ p {
 
 .main {
   display: flex;
+  display: wrap;
   flex-direction: column;
   align-items: center;
   padding-left: 300px;
+}
+.main__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 48px 18px 28px;
+}
+.main__buttons button {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  width: 280px;
+  height: 70px;
+  font-size: 18px;
+  font-weight: 100;
+  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+  border: none;
+  padding: 0 8px 0 8px;
+  cursor: pointer;
+}
+.main__buttons button:hover {
+  background-color: rgb(243, 151, 151);
+  transition: var(--primary-transition);
+}
+@media only screen and (max-width: 1070px) {
+  .main__buttons {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.main__release {
+  display: flex;
+  justify-content: center;
+}
+.main__release a {
+  -webkit-text-decoration: var(--text-decoration);
+          text-decoration: var(--text-decoration);
+  color: var(--secondary-color);
 }
 .main h1 {
   color: var(--primary-color);
   font-weight: 300;
   font-size: calc(5.2rem + 0.6vmin);
+  padding: 26px;
+}
+.main h4 {
+  color: var(--third-color);
+  font-weight: 300;
+  line-height: 44px;
+  font-size: calc(2.5rem + 0.6vmin);
+  width: calc(80rem + 0.6vmin);
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 0 26px;
+}
+@media only screen and (max-width: 1070px) {
+  .main h4 {
+    font-size: calc(2rem + 0.6vmin);
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 1070px) {
+  .main {
+    padding-left: 100px;
+  }
 }/*# sourceMappingURL=index.css.map */

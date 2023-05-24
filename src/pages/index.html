@@ -9,6 +9,9 @@
   </head>
   <body>
     <header class="header">
+      <div class="header__burger">
+        <button type="button"><span></span></button>
+      </div>
       <ul class="header__ul">
         <li class="header__ul__li">
           <a href="#" class="header__ul__li__a"
@@ -19,7 +22,7 @@
           /></a>
         </li>
         <li class="header__ul__version">
-          <div class="header__ul__version__seen">1.0.0</div>
+          <div class="header__ul__version__seen padding"><span>1.0.0<span></div>
           <ul class="header__ul__version__dropdown">
             <li><a href="#">1.0.0</a></li>
             <li><a href="#">0.100.2</a></li>
@@ -83,8 +86,20 @@
         </div>
       </ul>
     </header>
-    <main class="main">
-      <h1>Materialize</h1>
+    <main>
+      <div class="container main">
+        <h1>Materialize</h1>
+        <h4>
+          A modern responsive front-end framework based on Material Design
+        </h4>
+        <div class="main__buttons">
+          <button type="button">Get Started</button>
+          <button type="button">Upgrade From 0.100.2</button>
+        </div>
+        <div class="main__release">
+          <a href="#"><p>Release: 1.0.0</p></a>
+        </div>
+      </div>
     </main>
   </body>
 </html>

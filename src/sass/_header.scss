@@ -1,4 +1,46 @@
+@mixin burger($translate) {
+  content: "";
+  height: 2px;
+  width: 100%;
+  display: flex;
+  background-color: var(--primary-color);
+  transform: translateY(#{$translate}px);
+}
+
 .header {
+  &__burger {
+    button {
+      span {
+        &:before {
+          @include burger(-9);
+        }
+        &:after {
+          @include burger(7);
+        }
+        height: 2px;
+        width: 100%;
+        background: var(--primary-color);
+      }
+      padding: 9px 0;
+      cursor: pointer;
+      border: none;
+      width: 32px;
+      display: none;
+      position: absolute;
+      flex-direction: column;
+      background: transparent;
+      top: 45px;
+      left: 109px;
+      transform: translateY(-50%);
+
+      @media only screen and (max-width: 1070px) {
+        display: flex;
+      }
+    }
+
+    width: 25px;
+    height: 25px;
+  }
   &__ul {
     &__li {
       &__a {
@@ -17,19 +59,22 @@
         display: none;
       }
       &__seen {
+        span {
+          font-family: var(--secondary-font);
+          color: var(--third-color);
+          padding: 0px;
+        }
         &::after {
           background-image: url(../assets/arrow.svg);
           content: "";
           background-repeat: no-repeat;
           position: absolute;
           top: 10px;
-          left: 38px;
+          left: 44px;
           width: 20px;
           height: 20px;
         }
         position: relative;
-        font-family: var(--secondary-font);
-        color: var(--secondary-color);
         border-bottom: 1px solid rgba(0, 0, 0, 0.2);
         width: 56px;
         line-height: 44px;
@@ -48,8 +93,8 @@
       }
       padding-bottom: 13px;
 
-      display: flex;
-      justify-content: center;
+      align-self: center;
+      width: 75px;
     }
     &__search {
       input {
@@ -95,7 +140,7 @@
         line-height: 44px;
       }
     }
-    &__menu li:hover {
+    &__menu > li:hover {
       background-color: lightgray;
       transition: var(--primary-transition);
     }
@@ -109,10 +154,15 @@
     display: flex;
     flex-direction: column;
     border-right: 1px solid rgba(0, 0, 0, 0.14);
+
+    @media only screen and (max-width: 1070px) {
+      display: none;
+      transition: var(--secondary-transition);
+    }
   }
   p {
     font-family: var(--primary-font);
-    color: var(--secondary-color);
+    color: var(--third-color);
     font-size: var(--primary-size);
     font-weight: 500;
     padding: 0 30px;
@@ -123,4 +173,5 @@
     font-size: var(--primary-size);
   }
   position: relative;
+  display: flex;
 }

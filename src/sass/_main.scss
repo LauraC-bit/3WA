@@ -1,11 +1,69 @@
 .main {
+  &__buttons {
+    button {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      text-transform: uppercase;
+      width: 280px;
+      height: 70px;
+      font-size: 18px;
+      font-weight: 100;
+      box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.2);
+      letter-spacing: 1px;
+      border: none;
+      padding: 0 8px 0 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: rgb(243, 151, 151);
+      transition: var(--primary-transition);
+    }
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin: 48px 18px 28px;
+
+    @media only screen and (max-width: 1070px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__release {
+    a {
+      text-decoration: var(--text-decoration);
+      color: var(--secondary-color);
+    }
+    display: flex;
+    justify-content: center;
+  }
   h1 {
     color: var(--primary-color);
     font-weight: 300;
     font-size: calc(5.2rem + 0.6vmin);
+    padding: 26px;
+  }
+  h4 {
+    color: var(--third-color);
+    font-weight: 300;
+    line-height: 44px;
+    font-size: calc(2.5rem + 0.6vmin);
+    width: calc(80rem + 0.6vmin);
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 0 26px;
+
+    @media only screen and (max-width: 1070px) {
+      font-size: calc(2rem + 0.6vmin);
+      flex-wrap: wrap;
+    }
   }
   display: flex;
+  display: wrap;
   flex-direction: column;
   align-items: center;
   padding-left: 300px;
+  @media only screen and (max-width: 1070px) {
+    padding-left: 100px;
+  }
 }
