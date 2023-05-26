@@ -423,21 +423,32 @@ p {
   top: 20px;
   right: 11px;
 }
+.header__ul__menu__css {
+  font-size: 13px;
+  line-height: 44px;
+}
 .header__ul__menu__css__unseen {
   display: none;
+}
+.header__ul__menu__css__unseen li {
+  background-color: white;
+}
+.header__ul__menu__css__unseen li:hover {
+  background-color: lightgray;
+  padding-left: 5px;
 }
 .header__ul__menu__css:hover ul {
   display: flex;
   flex-direction: column;
   overflow: visible;
-  padding: 8px;
   transition: var(--primary-transition);
+  background-color: lightgray;
 }
 .header__ul__menu li {
   font-size: 13px;
   line-height: 44px;
 }
-.header__ul__menu > li:hover {
+.header__ul__menu li:hover {
   background-color: lightgray;
   transition: var(--primary-transition);
 }
@@ -497,6 +508,7 @@ p {
   .main__buttons {
     display: flex;
     flex-direction: column;
+    padding-right: 58px;
   }
 }
 .main__release {
@@ -508,11 +520,71 @@ p {
           text-decoration: var(--text-decoration);
   color: var(--secondary-color);
 }
+@media only screen and (max-width: 1070px) {
+  .main__release {
+    padding-right: 68px;
+  }
+}
+.main__github {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 50px 0 50px 300px;
+  padding: 18px;
+}
+.main__github__txt {
+  display: flex;
+  gap: 18px;
+}
+.main__github__txt p {
+  color: var(--secondary-color);
+  font-size: calc(1rem + 0.6vmin);
+  white-space: nowrap;
+}
+.main__github__txt a {
+  text-decoration: none;
+  color: rgb(40, 166, 207);
+}
+.main__github button {
+  background-color: #2bbbad;
+  color: white;
+  text-transform: uppercase;
+  padding: 8px 16px 8px 16px;
+  margin-left: 68px;
+  border: none;
+  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.main__github button:hover {
+  background-color: #41c9bb;
+  transition: var(--primary-transition);
+}
+@media only screen and (max-width: 1070px) {
+  .main__github {
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 0px;
+  }
+  .main__github button {
+    font-size: calc(1.6rem + 0.6vmin);
+    width: 250px;
+    padding: 10px;
+    margin-top: 28px;
+    margin-right: 28px;
+  }
+}
 .main h1 {
   color: var(--primary-color);
   font-weight: 300;
   font-size: calc(5.2rem + 0.6vmin);
   padding: 26px;
+}
+@media only screen and (max-width: 1070px) {
+  .main h1 {
+    padding-right: 100px;
+  }
 }
 .main h4 {
   color: var(--third-color);
@@ -522,12 +594,13 @@ p {
   width: calc(80rem + 0.6vmin);
   letter-spacing: 1px;
   text-align: center;
-  padding: 0 26px;
+  padding: 0 76px;
 }
 @media only screen and (max-width: 1070px) {
   .main h4 {
     font-size: calc(2rem + 0.6vmin);
     flex-wrap: wrap;
+    padding-right: 148px;
   }
 }
 @media only screen and (max-width: 1070px) {

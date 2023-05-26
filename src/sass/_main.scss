@@ -27,6 +27,7 @@
     @media only screen and (max-width: 1070px) {
       display: flex;
       flex-direction: column;
+      padding-right: 58px;
     }
   }
   &__release {
@@ -36,12 +37,69 @@
     }
     display: flex;
     justify-content: center;
+        @media only screen and (max-width: 1070px) {
+          padding-right: 68px;
+        }
+  }
+  &__github {
+    &__txt{
+      p {
+          color: var(--secondary-color);
+          font-size: calc(1rem + 0.6vmin);
+          white-space: nowrap;
+      }
+      
+      a {
+          text-decoration: none;
+          color: rgb(40, 166, 207);
+      }
+      display: flex;
+       gap: 18px;
+    }
+    button {
+      &:hover {
+        background-color: #41c9bb;
+        transition: var(--primary-transition);
+      }
+      background-color: #2bbbad;
+      color: white;
+      text-transform: uppercase;
+      padding: 8px 16px 8px 16px;
+      margin-left: 68px;
+      border: none;
+      box-shadow:1px 2px 3px 0 rgba(0, 0, 0, 0.2) ;
+      cursor: pointer;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 50px 0 50px 300px;
+    padding: 18px;
+        @media only screen and (max-width: 1070px) {
+          flex-direction: column;
+          justify-content: space-evenly;
+          margin-left: 0px;
+          button {
+            font-size: calc(1.6rem + 0.6vmin);
+            width: 250px;
+            padding: 10px;
+            margin-top: 28px;
+            margin-right: 28px;
+            
+          }
+        }
   }
   h1 {
     color: var(--primary-color);
     font-weight: 300;
     font-size: calc(5.2rem + 0.6vmin);
     padding: 26px;
+
+    @media only screen and (max-width: 1070px) {
+        padding-right: 100px;
+      }
   }
   h4 {
     color: var(--third-color);
@@ -51,11 +109,12 @@
     width: calc(80rem + 0.6vmin);
     letter-spacing: 1px;
     text-align: center;
-    padding: 0 26px;
+    padding: 0 76px;
 
     @media only screen and (max-width: 1070px) {
       font-size: calc(2rem + 0.6vmin);
       flex-wrap: wrap;
+      padding-right: 148px;
     }
   }
   display: flex;

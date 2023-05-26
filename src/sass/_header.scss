@@ -123,27 +123,37 @@
     &__menu {
       &__css {
         &__unseen {
+          li {
+            &:hover {
+              background-color: lightgray;
+              padding-left: 5px;
+            }
+            background-color: white;
+          }
           display: none;
         }
+         font-size: 13px;
+        line-height: 44px;
       }
       &__css:hover {
         ul {
           display: flex;
           flex-direction: column;
           overflow: visible;
-          padding: 8px;
           transition: var(--primary-transition);
+          background-color: lightgray;
         }
       }
       li {
+        &:hover {
+            background-color: lightgray;
+            transition: var(--primary-transition);
+          }
         font-size: 13px;
         line-height: 44px;
       }
     }
-    &__menu > li:hover {
-      background-color: lightgray;
-      transition: var(--primary-transition);
-    }
+    
 
     width: 300px;
     height: 100vh;
